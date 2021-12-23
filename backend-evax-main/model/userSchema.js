@@ -22,15 +22,11 @@ module.exports = User;
 
 
 userSchema=mongoose.Schema({
-    first_name: {
+    name: {
         type: String,
         required: true,
     },
-    last_name: {
-      type: String,
-      required: true,
-    }
-    ,
+   
     email :
     {
         type:String,
@@ -42,17 +38,17 @@ userSchema=mongoose.Schema({
         required: false,
         default: "user"
     },
-    Date: {
+    date: {
         type: String,
         required: false,
     },
     ncin: {
-        type: Number,
+        type: String,
         required: true,
         default: 0
     },
     nmobile :{
-        type: Number,
+        type: String,
         required: true,
         default: 0
     },
@@ -74,20 +70,3 @@ userSchema=mongoose.Schema({
 
 
 module.exports=User=(mongoose.model('usercollection', userSchema));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

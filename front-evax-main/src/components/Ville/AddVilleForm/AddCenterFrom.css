@@ -1,0 +1,45 @@
+.addFrom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+h6{
+    text-align: center;
+    color: #2E4765;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+.input{
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.button{
+    border-radius: 25px;
+    background: #FFBC6E;
+    border-color: #FFBC6E;
+    color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 25px;
+    padding-left: 10px;
+    font-size: 15px;
+    margin-top: 20px;
+}
+.button:hover{
+    border-color: #FFBC6E;
+    color: #FFBC6E;
+    background-color: transparent;
+}
+.button:focus{
+    background: #FFBC6E;
+    border-color: #FFBC6E;
+    color: white;
+}
+

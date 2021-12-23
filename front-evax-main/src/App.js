@@ -12,6 +12,8 @@ import Home from './pages/Visitor/Home/Home'
 import Contact from './pages/Visitor/Contact/Contact'
 import Inscription from './pages/Authentication/Inscription/Inscription';
 import Login from './pages/Authentication/Login/Login';
+import testtttt from "./components/Ville/AddVilleForm/Ville";
+
 function App() {
   return (
     <Router>
@@ -27,6 +29,8 @@ function App() {
         <Route path="/contactUs" element={<Contact/>}/>
         <Route path="/inscription" element={<Inscription/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route exact path="/ville" component={testtttt} />
+
       </Routes>
     </Router>
       

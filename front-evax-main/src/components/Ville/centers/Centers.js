@@ -1,21 +1,46 @@
-import React,{useState,useEffect} from 'react'
+import React from 'react'
 import './Centers.css'
 import 'antd/dist/antd.css';
 import {Link} from 'react-router-dom'
 import { Table, Button} from 'antd';
 import {EyeOutlined, DeleteOutlined, EditOutlined} from '@ant-design/icons';
-import axios from "../../../http-common";
-
+const dataSource = [
+    {
+      key: '1',
+      center: 'Maison jeune',
+      capacity: 10,
+      location:'Tunis'
+    },
+    {
+      key: '2',
+      center: 'Maison jeune',
+      capacity: 10,
+      location:'Tunis'
+    },
+    {
+      key: '3',
+      center: 'Maison jeune',
+      capacity: 10,
+      location:'Tunis'
+    },
+    {
+      key: '4',
+      center: 'Maison jeune',
+      capacity: 10,
+      location:'Tunis'
+    },
+  ];
+  
   const columns = [
     {
       title: 'Centre',
-      dataIndex: 'name',
-      key: 'name',
+      dataIndex: 'center',
+      key: 'center',
     },
     {
       title: 'Localisation',
-      dataIndex: 'manager',
-      key: 'manager',
+      dataIndex: 'location',
+      key: 'location',
     },
     {
       title: 'Nombre max 1/2',
@@ -39,13 +64,6 @@ import axios from "../../../http-common";
     },
   ];
 function Centers() {
-  
-  const [ville, setVille] = useState([]);
-
-  useEffect(() => {
-    axios.get('http://localhost:4000/center')
-        .then(response =>setVille(response.data));
-  }, []);
 
     return (
         <div className="table">
@@ -53,7 +71,7 @@ function Centers() {
             <Button type="dashed" ghost danger style={{marginTop:'5px', marginBottom:'5px'}}>Ajouter centre</Button>
           </Link>
           
-          <Table dataSource={ville} columns={columns} style={{width:'100%', borderRadius:'25px'}}> </Table>;
+          <Table dataSource={dataSource} columns={columns} style={{width:'100%', borderRadius:'25px'}}> </Table>;
         </div>
     )
 }

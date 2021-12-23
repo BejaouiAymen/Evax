@@ -5,6 +5,7 @@ import FirstStep from '../firstStep/FirstStep';
 import SecondStep from '../firstStep/SecondStep';
 import LastStep from '../firstStep/LastStep';
 import 'antd/dist/antd.css';
+import axios from "../../../http-common";
 const { Step } = Steps;
 
 const steps = [
@@ -22,6 +23,30 @@ const steps = [
     },
   ];
 function InscriSteps() {
+  function handleSubmit(event)  {
+    event.preventDefault();
+    let name=    localStorage.getItem('name');
+    let password=    localStorage.getItem('password');
+    let ncin=    localStorage.getItem('ncin');
+    let email=    localStorage.getItem('email');
+    let nmobile=    localStorage.getItem('nmobile');
+    let date=    localStorage.getItem('date');
+console.log("aaaaaaaaaaaaaaaaaaaaaaaaaa")
+    const rendervous=new Date().toLocaleString() + "";
+   
+    axios
+      .post("/inscription", { name,email,date,ncin,nmobile,password })
+      .then((result) => {
+        console.log(result);
+
+        return result;
+      })
+
+      .catch(function (error) {
+        console.log(error);
+      });
+  
+  };
     const [current, setCurrent] = React.useState(0);
     const next = () => {
         setCurrent(current + 1);
@@ -32,7 +57,7 @@ function InscriSteps() {
     return (
         <div className="firstStep">
             <div className="form1">
-                
+             
                 <div className="steps-content">{steps[current].content}</div>
                 <div className="steps-action">
                   {current < steps.length - 1 && (
@@ -41,7 +66,7 @@ function InscriSteps() {
                     </Button>
                   )}
                   {current === steps.length - 1 && (
-                    <Button className="suivant" onClick={() => message.success('Processing complete!')}>
+                    <Button className="suivant" type='button' onClick={handleSubmit}>
                       Enregistrer
                     </Button>
                   )}

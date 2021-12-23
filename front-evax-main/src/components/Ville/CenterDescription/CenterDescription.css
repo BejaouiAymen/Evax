@@ -1,0 +1,10 @@
+.moreinfo{
+    display: flex;
+    justify-content: space-evenly;
+}
+.cancel{
+    border-radius: 25px;
+}
+.submit{
+    border-radius: 25px;
+}
